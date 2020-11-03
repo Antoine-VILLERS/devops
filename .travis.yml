@@ -11,7 +11,7 @@ script:
 
   #docker image
   - docker tag picture_1 $Dockeruser/pictures
-  - docker push $Dockeruser/pictures
+  - docker push $Dockeruser/pictures:picture_1
 
 cache:
 directories:
