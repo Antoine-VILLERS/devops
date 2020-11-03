@@ -6,12 +6,14 @@ script:
   #docker connexion
   - docker login -u $Dockeruser -p $Dockerpwd
 
+  #docker build
+  - docker-compose up
+
   #docker image
   - docker tag picture_1 $Dockeruser/picture_1
   - docker push $Dockeruser/picture_1
 
 cache:
-
 directories:
   - $HOME/.m2
 services:
