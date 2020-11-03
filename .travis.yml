@@ -7,15 +7,12 @@ script:
   - docker login -u $Dockeruser -p $Dockerpwd
 
   #docker build
-  - docker-compose up
+  - docker build -t $Dockeruser/pictures:database database
+  - docker build -t $Dockeruser/pictures:httpd httpd
+  - docker build -t $Dockeruser/pictures:simple-api simple-api
 
   #docker image
-  - docker tag picture_1 $Dockeruser/pictures
-  - docker push $Dockeruser/pictures:picture_1
-
-cache:
-directories:
-  - $HOME/.m2
-services:
-  - docker
-
+  # - docker tag picture_1 $Dockeruser/pictures
+  - docker push $Dockeruser/pictures:database
+  - docker push $Dockeruser/pictures:httpd
+  - docker push $Dockeruser/pictures:simple-api
