@@ -21,5 +21,4 @@ script:
 addons:
   sonarcloud:
     organization: "antoine-villers"
-    token:
-      secure: "$SONARCLOUD_TOKEN" # encrypted value of your token
+    token: "$SONARCLOUD_TOKEN" # encrypted value of your token
