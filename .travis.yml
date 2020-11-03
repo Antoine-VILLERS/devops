@@ -2,6 +2,7 @@ language: java
 script:
   #lance les tests
   - mvn clean verify --file ./simple-api/pom.xml
+  - mvn clean verify --file ./simple-api/pom.xml org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Antoine-VILLERS_devops
 
   #docker connexion
   - docker login -u $Dockeruser -p $Dockerpwd
@@ -22,5 +23,3 @@ addons:
     organization: "antoine-villers"
     token:
       secure: "$SONARCLOUD_TOKEN" # encrypted value of your token
-
-  - mvn clean verify --file ./simple-api/pom.xml org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Antoine-VILLERS_devops
