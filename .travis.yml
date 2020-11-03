@@ -16,3 +16,11 @@ script:
   - docker push $Dockeruser/pictures:database
   - docker push $Dockeruser/pictures:httpd
   - docker push $Dockeruser/pictures:simple-api
+
+  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Antoine-VILLERS_devops
+
+addons:
+  sonarcloud:
+    organization: "antoine-villers"
+    token:
+      secure: "$SONARCLOUD_TOKEN" # encrypted value of your token
