@@ -10,8 +10,8 @@ script:
   - docker-compose up
 
   #docker image
-  - docker tag picture_1 $Dockeruser/picture_1
-  - docker push $Dockeruser/picture_1
+  - docker tag picture_1 $Dockeruser/pictures
+  - docker push $Dockeruser/pictures
 
 cache:
 directories:
