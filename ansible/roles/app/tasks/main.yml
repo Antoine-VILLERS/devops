@@ -1,7 +1,7 @@
 - name: Launch app
   docker_container:
     name: backend
-    image: cecile98/devopstp_2:simple-api
+    image: antoinevil/pictures:simple-api
     state: started
     networks:
       - name: app-network

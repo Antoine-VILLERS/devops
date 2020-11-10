@@ -3,4 +3,8 @@
   become: yes
 
   roles:
+    - app
+    - database
     - docker
+    - network
+    - proxy
