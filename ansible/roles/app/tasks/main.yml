@@ -2,6 +2,7 @@
   docker_container:
     name: backend
     image: antoinevil/pictures:simple-api
+    pull: is
     state: started
     networks:
       - name: app-network
